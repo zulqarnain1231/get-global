@@ -24,7 +24,7 @@ const config: Config = {
         green: "#0B4A23",
       },
       fontFamily: {
-        Just: ["JUST"],
+        Just: ["JUST", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
