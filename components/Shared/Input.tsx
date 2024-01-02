@@ -18,6 +18,7 @@ const Input: React.FC<Props> = ({ name, value, label, setState }: Props) => {
         name={name}
         value={value}
         onChange={setState}
+        required
         className="w-full h-[45px] border-none focus:outline-none bg-black-off rounded-[50px] px-4 text-white-main text-base sm:text-lg font-medium"
       />
     </div>

@@ -16,12 +16,14 @@ const config: Config = {
         black: {
           main: "#000",
           off: "#696969",
+          faded: "#A998B1",
         },
         white: {
           main: "#fff",
           off: "#E7DCEC",
         },
         green: "#0B4A23",
+        gray: "#C3BFBF",
       },
       fontFamily: {
         Just: ["JUST", "sans-serif"],

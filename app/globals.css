@@ -6,3 +6,8 @@
 .gradient {
   background: linear-gradient(286deg, #be6ae3 4.22%, #144db1 103.38%);
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+}
