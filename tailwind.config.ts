@@ -24,6 +24,7 @@ const config: Config = {
         },
         green: "#0B4A23",
         gray: "#C3BFBF",
+        success: "#60D256",
       },
       fontFamily: {
         Just: ["JUST", "sans-serif"],
