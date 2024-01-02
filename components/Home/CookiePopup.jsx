@@ -3,12 +3,7 @@ import Dialog from "@mui/material/Dialog";
 import { RxCross1 } from "react-icons/rx";
 import Image from "next/image";
 
-interface Props {
-  Open: boolean;
-  CloseEvent: () => void;
-}
-
-function CookiePopup({ Open, CloseEvent }: Props) {
+function CookiePopup({ Open, CloseEvent }) {
   return (
     <Dialog
       open={Open}
@@ -32,6 +27,7 @@ function CookiePopup({ Open, CloseEvent }: Props) {
           <div className="w-full h-full flex items-start justify-start gap-2 sm:gap-4">
             <div className="relative sm:h-[105px] h-[80px] w-[80px] sm:w-[105px] flex-shrink-0">
               <Image
+                priority
                 className="w-full h-full object-contain"
                 src={"/Assets/Cookie.png"}
                 alt="cookie"

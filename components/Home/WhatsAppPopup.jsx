@@ -3,16 +3,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FaCircleCheck } from "react-icons/fa6";
 import DialogueWrapper from "../Shared/DialogeWrapper";
-import * as Icons from "@/Svg/Icons";
-type Props = {
-  isOpen: boolean;
-  toggleIsOpen: () => void;
-};
-const WhatsAppPopup: React.FC<Props> = ({ isOpen, toggleIsOpen }: Props) => {
-  const [email, setEmail] = useState<string>("");
-  const [thankYou, setThankYou] = useState<boolean>(false);
+import * as Icons from "../../Svg/Icons";
+
+const WhatsAppPopup = ({ isOpen, toggleIsOpen }) => {
+  const [email, setEmail] = useState("");
+  const [thankYou, setThankYou] = useState(false);
   const toggleThankYou = () => setThankYou(!thankYou);
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     toggleThankYou();
   };
@@ -22,6 +19,7 @@ const WhatsAppPopup: React.FC<Props> = ({ isOpen, toggleIsOpen }: Props) => {
         <div className="w-full h-full sm:px-10 px-4 py-6 sm:py-7 flex flex-col items-start justify-start gap-6">
           <div className="w-full h-[304px] relative">
             <Image
+              priority
               src={"/Assets/AlmostThere.png"}
               className="w-full h-full object-contain"
               alt=""
@@ -74,9 +72,7 @@ const WhatsAppPopup: React.FC<Props> = ({ isOpen, toggleIsOpen }: Props) => {
             <input
               type="email"
               value={email}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setEmail(e.target.value)
-              }
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your Email"
               required
               className="sm:h-[55px] h-[50px] w-full px-4 rounded-[30px] border-2 focus:outline-none text-black-main text-lg sm:text-xl font-medium border-black-main"
@@ -94,6 +90,7 @@ const WhatsAppPopup: React.FC<Props> = ({ isOpen, toggleIsOpen }: Props) => {
         <div className="w-full h-full sm:px-10 px-4 sm:py-7 py-6 flex flex-col items-start justify-start gap-6">
           <div className="w-full sm:h-[404px] h-[340px] relative">
             <Image
+              priority
               src={"/Assets/ThankYou.png"}
               className="w-full h-full object-contain"
               alt=""

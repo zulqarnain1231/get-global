@@ -1,11 +1,6 @@
 import React from "react";
 
-type Props = {
-  setState: any;
-  active: boolean;
-  name: string;
-};
-const CheckBox: React.FC<Props> = ({ name, active, setState }) => {
+const CheckBox = ({ name, active, setState }) => {
   return (
     <div
       onClick={() => setState()}

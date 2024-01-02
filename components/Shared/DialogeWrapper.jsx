@@ -2,21 +2,13 @@ import React from "react";
 import Dialog from "@mui/material/Dialog";
 import { RxCross1 } from "react-icons/rx";
 
-interface Props {
-  Open: boolean;
-  CloseEvent: () => void;
-  style?: string;
-  children: React.ReactNode;
-  height?: string;
-}
-
 function DialogueWrapper({
   Open,
   CloseEvent,
   style,
   children,
   height = "h-[700px]",
-}: Props) {
+}) {
   return (
     <Dialog
       open={Open}

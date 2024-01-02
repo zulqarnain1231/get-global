@@ -7,14 +7,8 @@ import CheckBox from "../Shared/CheckBox";
 import Input from "../Shared/Input";
 import Stats from "./Stats";
 const SalaryCalculator = () => {
-  const [isStats, setIsStats] = useState<boolean>(false);
-  const [inputs, setInputs] = useState<{
-    currentAddress: string;
-    income: null | number | any;
-    planAddress: string;
-    status: string;
-    seniority: string;
-  }>({
+  const [isStats, setIsStats] = useState(false);
+  const [inputs, setInputs] = useState({
     currentAddress: "",
     income: null,
     planAddress: "",
@@ -22,25 +16,23 @@ const SalaryCalculator = () => {
     seniority: "mid",
   });
   const toggleStats = () => setIsStats(!isStats);
-  const handleInputs = (e: React.ChangeEvent<HTMLInputElement>) =>
+  const handleInputs = (e) =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
 
-  const handleStatusChange: (status: string) => any = (status: string) =>
-    setInputs({ ...inputs, status });
+  const handleStatusChange = (status) => setInputs({ ...inputs, status });
 
-  const handleSeniorityChange: (seniority: string) => any = (
-    seniority: string
-  ) => setInputs({ ...inputs, seniority });
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSeniorityChange = (seniority) =>
+    setInputs({ ...inputs, seniority });
+  const handleSubmit = (e) => {
     e.preventDefault();
     toggleStats();
   };
   return (
-    <aside className="w-full h-full lg:h-[1072px] lg:row-span-2 bg-black-main rounded-[30px]">
+    <aside className="w-full h-full lg:row-span-2 bg-black-main rounded-[30px]">
       {!isStats && (
         <form
           onSubmit={handleSubmit}
-          className="w-full h-full flex flex-col items-start lg:justify-between justify-start gap-8 sm:px-10 py-8 px-6 sm:py-[70px]"
+          className="w-full h-full flex flex-col items-start lg:justify-between justify-start gap-[25.1px] sm:px-10 py-8 px-6 sm:py-[70px] lg:py-10"
         >
           <h2 className="text-2xl sm:tex-3xl text-white-main font-normal font-Just">
             Salary Insights

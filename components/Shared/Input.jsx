@@ -1,12 +1,6 @@
 import React from "react";
 
-type Props = {
-  name: string;
-  value: string;
-  label: string;
-  setState: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
-const Input: React.FC<Props> = ({ name, value, label, setState }: Props) => {
+const Input = ({ name, value, label, setState }) => {
   return (
     <div className="w-full flex flex-col items-start justify-start gap-4">
       <p className="text-white-main text-base sm:text-lg font-semibold">

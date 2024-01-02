@@ -1,16 +1,6 @@
 import React from "react";
 
-type Props = {
-  className?: string;
-  stroke?: string;
-  fill?: string;
-};
-
-export const Whatsapp: React.FC<Props> = ({
-  className,
-  stroke,
-  fill,
-}: Props) => {
+export const Whatsapp = ({ className, stroke, fill }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

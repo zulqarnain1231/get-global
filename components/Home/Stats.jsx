@@ -1,19 +1,16 @@
 "use client";
 import React, { useState } from "react";
-import * as Icons from "@/Svg/Icons";
+import * as Icons from "../../Svg/Icons";
 import { GoChevronLeft } from "react-icons/go";
 import WhatsAppPopup from "./WhatsAppPopup";
-type Props = {
-  setState: any;
-};
 
-const Stats: React.FC<Props> = ({ setState }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+const Stats = ({ setState }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const toggleIsOpen = () => setIsOpen(!isOpen);
   return (
     <>
-      <div className="w-full h-full flex flex-col items-start justify-start gap-8">
-        <div className="w-full flex flex-col items-start justify-start gap-8 sm:py-[70px] py-8 px-6 sm:px-10">
+      <div className="w-full h-full flex flex-col items-start justify-start lg:justify-between gap-4">
+        <div className="w-full flex flex-col items-start justify-start gap-5 sm:py-[70px] lg:py-10 py-8 px-6 sm:px-10">
           <button
             onClick={setState}
             className="w-[100px] h-[30px] rounded-[40px] flex items-center justify-center gap-1 text-white-main text-sm font-Just font-normal bg-white-main/20"
@@ -39,7 +36,7 @@ const Stats: React.FC<Props> = ({ setState }) => {
             9% to 42%
           </p>
         </div>
-        <div className="w-full sm:py-[70px] py-8 sm:px-10 px-4 gradient rounded-b-[30px] flex flex-col items-start justify-start gap-8">
+        <div className="w-full sm:py-[70px] lg:py-6 py-8 sm:px-10 px-4 gradient rounded-b-[30px] flex flex-col items-start justify-start gap-8">
           <h2 className="text-white-main text-2xl sm:text-3xl font-medium font-Just">
             <span className="font-extrabold">20+ Professionals</span> have
             already transformed their Global tech careers
