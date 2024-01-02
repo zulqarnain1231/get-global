@@ -13,7 +13,7 @@ const Stats: React.FC<Props> = ({ setState }) => {
   return (
     <>
       <div className="w-full h-full flex flex-col items-start justify-start gap-8">
-        <div className="w-full flex flex-col items-start justify-start gap-8 py-[70px] px-10">
+        <div className="w-full flex flex-col items-start justify-start gap-8 sm:py-[70px] py-8 px-6 sm:px-10">
           <button
             onClick={setState}
             className="w-[100px] h-[30px] rounded-[40px] flex items-center justify-center gap-1 text-white-main text-sm font-Just font-normal bg-white-main/20"
@@ -39,7 +39,7 @@ const Stats: React.FC<Props> = ({ setState }) => {
             9% to 42%
           </p>
         </div>
-        <div className="w-full py-[70px] px-10 gradient rounded-b-[30px] flex flex-col items-start justify-start gap-8">
+        <div className="w-full sm:py-[70px] py-8 sm:px-10 px-4 gradient rounded-b-[30px] flex flex-col items-start justify-start gap-8">
           <h2 className="text-white-main text-2xl sm:text-3xl font-medium font-Just">
             <span className="font-extrabold">20+ Professionals</span> have
             already transformed their Global tech careers
@@ -49,7 +49,7 @@ const Stats: React.FC<Props> = ({ setState }) => {
           </h2>
           <button
             onClick={toggleIsOpen}
-            className="h-[60px] sm:w-[390px] w-full flex items-center justify-center gap-2 bg-white-main rounded-[40px] text-black-main text-lg sm:text-xl font-bold"
+            className="h-[60px] sm:w-[390px] w-full flex items-center justify-center gap-2 bg-white-main rounded-[40px] text-black-main text-base sm:text-xl font-bold"
           >
             <Icons.Whatsapp />
             Join Our Invite-only Whatsapp!

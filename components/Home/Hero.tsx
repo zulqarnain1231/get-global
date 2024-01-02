@@ -13,7 +13,7 @@ const Hero = () => {
           fill
         />
       </Link>
-      <h1 className=" text-black-main text-left text-5xl leading-[55px] font-Just font-extrabold">
+      <h1 className=" text-black-main text-left sm:text-5xl text-4xl sm:leading-[55px] font-Just font-extrabold">
         Considering a Tech Career Abroad? Discover{" "}
         <span className="bg-gradient-to-r from-[#144DB1] to-[#BE6AE3] bg-clip-text text-transparent">
           Your Ideal Salary

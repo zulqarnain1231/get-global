@@ -36,11 +36,11 @@ const SalaryCalculator = () => {
     toggleStats();
   };
   return (
-    <aside className="w-full h-full lg:row-span-2 bg-black-main rounded-[30px]">
+    <aside className="w-full h-full lg:h-[1072px] lg:row-span-2 bg-black-main rounded-[30px]">
       {!isStats && (
         <form
           onSubmit={handleSubmit}
-          className="w-full h-full flex flex-col items-start justify-start gap-8 px-10 py-[70px]"
+          className="w-full h-full flex flex-col items-start lg:justify-between justify-start gap-8 sm:px-10 py-8 px-6 sm:py-[70px]"
         >
           <h2 className="text-2xl sm:tex-3xl text-white-main font-normal font-Just">
             Salary Insights
@@ -174,7 +174,7 @@ const SalaryCalculator = () => {
             <p className="text-white-main text-base sm:text-lg font-semibold">
               Job Seniority?
             </p>
-            <div className="w-full grid grid-cols-2 sm:gap-5 gap-3">
+            <div className="w-full grid grid-cols-2 sm:gap-5 gap-2">
               <CheckBox
                 name="🌿 Mid level"
                 setState={() => handleSeniorityChange("mid")}
