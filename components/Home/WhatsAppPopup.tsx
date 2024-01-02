@@ -19,7 +19,7 @@ const WhatsAppPopup: React.FC<Props> = ({ isOpen, toggleIsOpen }: Props) => {
   return (
     <DialogueWrapper Open={isOpen} CloseEvent={toggleIsOpen}>
       {!thankYou && (
-        <div className="w-full h-full px-10 py-7 flex flex-col items-start justify-start gap-6">
+        <div className="w-full h-full sm:px-10 px-4 py-6 sm:py-7 flex flex-col items-start justify-start gap-6">
           <div className="w-full h-[304px] relative">
             <Image
               src={"/Assets/AlmostThere.png"}
@@ -42,7 +42,7 @@ const WhatsAppPopup: React.FC<Props> = ({ isOpen, toggleIsOpen }: Props) => {
           {/* fetures */}
           <div className="w-full flex flex-col items-start justify-start gap-4">
             <div className="w-full flex items-center justify-start gap-2">
-              <FaCircleCheck className="text-success text-2xl" />
+              <FaCircleCheck className="text-success text-2xl flex-shrink-0" />
               <p className="text-lg sm:text-xl text-black-off font-medium">
                 <span className="text-black-main font-bold">
                   Exclusive Job Alerts:
@@ -51,7 +51,7 @@ const WhatsAppPopup: React.FC<Props> = ({ isOpen, toggleIsOpen }: Props) => {
               </p>
             </div>
             <div className="w-full flex items-center justify-start gap-2">
-              <FaCircleCheck className="text-success text-2xl" />
+              <FaCircleCheck className="text-success text-2xl flex-shrink-0" />
               <p className="text-lg sm:text-xl text-black-off font-medium">
                 <span className="text-black-main font-bold">
                   Informed Decisions:
@@ -60,7 +60,7 @@ const WhatsAppPopup: React.FC<Props> = ({ isOpen, toggleIsOpen }: Props) => {
               </p>
             </div>
             <div className="w-full flex items-center justify-start gap-2">
-              <FaCircleCheck className="text-success text-2xl" />
+              <FaCircleCheck className="text-success text-2xl flex-shrink-0" />
               <p className="text-lg sm:text-xl text-black-off font-medium">
                 <span className="text-black-main font-bold">Insider Tips:</span>{" "}
                 Receive guidance on visa process & relocation.
@@ -91,8 +91,8 @@ const WhatsAppPopup: React.FC<Props> = ({ isOpen, toggleIsOpen }: Props) => {
         </div>
       )}
       {thankYou && (
-        <div className="w-full h-full px-10 py-7 flex flex-col items-start justify-start gap-6">
-          <div className="w-full h-[404px] relative">
+        <div className="w-full h-full sm:px-10 px-4 sm:py-7 py-6 flex flex-col items-start justify-start gap-6">
+          <div className="w-full sm:h-[404px] h-[340px] relative">
             <Image
               src={"/Assets/ThankYou.png"}
               className="w-full h-full object-contain"
@@ -112,7 +112,10 @@ const WhatsAppPopup: React.FC<Props> = ({ isOpen, toggleIsOpen }: Props) => {
             opportunities today!
           </p>
           <button
-            onClick={toggleIsOpen}
+            onClick={() => {
+              toggleIsOpen();
+              setTimeout(() => toggleThankYou(), 500);
+            }}
             className="h-[60px] w-full flex flex-shrink-0 items-center justify-center gap-2 bg-green rounded-[30px] text-white-main text-lg sm:text-xl font-bold"
           >
             <Icons.Whatsapp /> Click here to Join

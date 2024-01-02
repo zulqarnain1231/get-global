@@ -25,6 +25,8 @@ function DialogueWrapper({
           background: "#fff",
           maxWidth: "unset",
           borderRadius: "30px",
+          minWidth: "340px",
+          minHeight: "700px",
         },
         "& ::-webkit-scrollbar": {
           width: "0px",
@@ -33,7 +35,7 @@ function DialogueWrapper({
       }}
     >
       <div
-        className={`sm:w-[600px] md:w-[700px] w-[300px] ${style} relative rounded-[30px]`}
+        className={`sm:w-[600px] md:w-[700px] w-[340px] ${style} relative rounded-[30px]`}
       >
         <div className={` ${height} overflow-auto`}>{children}</div>
       </div>
