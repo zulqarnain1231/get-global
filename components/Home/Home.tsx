@@ -1,8 +1,17 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
+import Input from "../Shared/Input";
 
 const HomePage = () => {
+  const [inputs, setInputs] = useState({
+    currentAddress: "",
+    income: null,
+    planAddress: "",
+  });
+  const handleInputs = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
   return (
     <section className="w-full h-full py-6">
       <div className="w-full h-full max-w-[1450px] mx-auto md:px-10 px-5">
@@ -32,6 +41,25 @@ const HomePage = () => {
               based on the same indicators and benchmarks used by companies to
               set salaries.
             </p>
+          </aside>
+          <aside className="w-full h-full row-span-2 bg-black-main rounded-[30px]">
+            <form className="w-full h-full flex flex-col items-start justify-start gap-8 px-10 py-[70px]">
+              <h2 className="text-2xl sm:tex-3xl text-white-main font-normal font-Just">
+                Salary Insights
+              </h2>
+              <Input
+                name="currentAddress"
+                value={inputs.currentAddress}
+                setState={handleInputs}
+                label="Where do you live?"
+              />
+              <Input
+                name="planAddress"
+                value={inputs.planAddress}
+                setState={handleInputs}
+                label="Where do you plan to move or considering moving to?"
+              />
+            </form>
           </aside>
         </div>
       </div>
