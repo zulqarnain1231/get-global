@@ -8,8 +8,8 @@ type Props = {
 const CheckBox: React.FC<Props> = ({ name, active, setState }) => {
   return (
     <div
-      onClick={() => setState}
-      className={`h-[40px] sm:w-[212px] w-full flex items-center justify-start gap-3 group px-3 rounded-[10px] border border-gray ${
+      onClick={() => setState()}
+      className={`h-[40px] xl:w-[212px] w-full flex items-center justify-start gap-3 group px-3 rounded-[10px] border border-gray ${
         active ? "bg-brand-secondary" : "bg-transparent"
       } hover:bg-brand-secondary cursor-pointer hover:duration-200`}
     >
