@@ -32,7 +32,7 @@ const SalaryCalculator = () => {
       {!isStats && (
         <form
           onSubmit={handleSubmit}
-          className="w-full h-full flex flex-col items-start lg:justify-between justify-start gap-[25.1px] sm:px-10 py-8 px-6 sm:py-[70px] lg:py-10"
+          className="w-full h-full flex flex-col items-start lg:justify-between justify-start gap-[25.2px] sm:px-10 py-8 px-6 sm:py-[70px] lg:py-10"
         >
           <h2 className="text-2xl sm:tex-3xl text-white-main font-normal font-Just">
             Salary Insights
