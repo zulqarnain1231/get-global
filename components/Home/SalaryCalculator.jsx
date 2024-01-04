@@ -14,6 +14,7 @@ const SalaryCalculator = () => {
     planAddress: "",
     status: "family",
     seniority: "mid",
+    currency: "INR",
   });
   const toggleStats = () => setIsStats(!isStats);
   const handleInputs = (e) =>
@@ -27,6 +28,13 @@ const SalaryCalculator = () => {
     e.preventDefault();
     toggleStats();
   };
+  const handleCountryChange = (e) =>
+    setInputs({ ...inputs, currentAddress: e.target.value });
+
+  const handleCurrencyChange = (e) =>
+    setInputs({ ...inputs, currency: e.target.value });
+  const countries = ["India", "Germany", "England", "Bhutan", "Bangladesh"];
+  const currencies = ["INR", "GER", "$", "Pound", "Lira", "Tka"];
   return (
     <aside className="w-full h-full lg:row-span-2 bg-black-main rounded-[30px]">
       {!isStats && (
@@ -37,12 +45,25 @@ const SalaryCalculator = () => {
           <h2 className="text-2xl sm:tex-3xl text-white-main font-normal font-Just">
             Salary Insights
           </h2>
-          <Input
-            name="currentAddress"
-            value={inputs.currentAddress}
-            setState={handleInputs}
-            label="Where do you live?"
-          />
+          <div className="w-full flex flex-col items-start justify-start gap-4 country">
+            <p className="text-white-main text-base sm:text-lg font-semibold">
+              Where do you live?
+            </p>
+            <select
+              value={inputs.currentAddress}
+              onChange={handleCountryChange}
+              defaultValue={""}
+              className="w-full h-[45px] rounded-[50px] cursor-pointer px-4 text-white-main text-base sm:text-lg font-medium"
+            >
+              <option value={""}></option>
+              {countries.map((item, index) => (
+                <option value={item} key={index}>
+                  {item}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <div className="w-full flex flex-col items-start justify-start gap-4">
             <p className="text-white-main text-base sm:text-lg font-semibold">
               Your annual income?
@@ -57,9 +78,17 @@ const SalaryCalculator = () => {
                 onChange={handleInputs}
                 className="w-full h-full border-none focus:outline-none bg-transparent px-4 text-white-main text-base sm:text-lg font-medium"
               />
-              <span className="h-full flex items-center justify-center rounded-r-[30px] bg-black-main/20 px-6 text-white-main text-base sm:text-lg font-medium">
-                INR
-              </span>
+              <select
+                value={inputs.currency}
+                onChange={handleCurrencyChange}
+                className="h-full flex items-center justify-center rounded-r-[30px] bg-black-main/20 px-4 text-white-main text-base sm:text-lg font-medium focus:outline-none cursor-pointer"
+              >
+                {currencies.map((item, index) => (
+                  <option key={index} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
           <Input

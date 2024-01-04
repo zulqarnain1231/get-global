@@ -11,3 +11,20 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   display: none;
 }
+
+.country select {
+  background-color: #696969;
+}
+.country select:focus {
+  outline: none;
+}
+select {
+  /* for Firefox */
+  -moz-appearance: none;
+  /* for Safari, Chrome, Opera */
+  -webkit-appearance: none;
+}
+option {
+  background-color: #696969;
+  color: white;
+}
